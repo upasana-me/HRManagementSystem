@@ -1,0 +1,20 @@
+<?php
+
+include_once "config.php";
+
+$con = mysql_connect( $db_server, $db_username, $db_password );
+echo "<br/>$db_server, $db_username, $db_password<br/>";
+if ( !$con1 )
+  {       
+    die ("Error in connecting to database :".mysql_error()."<br/>");
+  }
+else
+  {
+    $res = mysql_select_db( $db_name, $con);
+    echo "<br/>$db_name, $con<br/>";
+    if( !$res )
+      {
+	die ("<br/>Unable to connect to database,".mysql_error()."<br/>");
+      }
+  }
+?>
